@@ -5,6 +5,7 @@ import { CacheService } from './services/cache.service';
 import Redis from 'ioredis';
 import { ConfigService } from '@nestjs/config';
 import { ExceptionService } from './exception/exception.service';
+import { BaseService } from './services/base.service';
 
 @Global()
 @Module({
@@ -24,8 +25,8 @@ import { ExceptionService } from './exception/exception.service';
     },
     ExceptionService,
     CacheService,
-    // BaseService,
+    BaseService,
   ],
-  exports: [CacheService],
+  exports: [BaseService, CacheService],
 })
 export class SharedModule {}
