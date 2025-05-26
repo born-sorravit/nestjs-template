@@ -1,7 +1,8 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { RouterModule } from '@nestjs/core';
+import { ExampleModule } from './example/example.module';
 
-const commonModules = [];
+const commonModules = [ExampleModule];
 
 @Module({
   imports: [
